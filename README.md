@@ -14,7 +14,8 @@ dbName='toDoApp' // DB NAME
 
 ### Endpoints
 
-The server runs on port 3000. You can change it in /lib/server.ts
+The server runs on port 3000. You can change it in /lib/server.ts.
+Also it runs over HTTPS so use the link : `https://localhost:3000`
 
 - Fetch all Tasks :
 	- GET /task
