@@ -3,6 +3,7 @@ import * as bodyParser from 'body-parser';
 import { Routes } from './routes/routes';
 import * as mongoose from 'mongoose';
 import * as dotenv from 'dotenv';
+import * as helmet from 'helmet';
 
 class App {
   public mongoUri: string = 'mongodb://localhost:27017';
@@ -19,7 +20,9 @@ class App {
 
   private config(): void {
     this.app.use(bodyParser.json());
-    this.app.use(bodyParser.urlencoded({ extended: false }));
+		this.app.use(bodyParser.urlencoded({ extended: false }));
+		this.app.use(helmet())
+
   }
   private mongoSetup(): void {
     mongoose.Promise = global.Promise;
